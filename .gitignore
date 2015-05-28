@@ -52,3 +52,10 @@ docs/_build/
 
 # PyBuilder
 target/
+
+# our
+Scarky2/settings_local.py
+static_bower
+static/*
+uploaded/*
+IDEA

@@ -1,0 +1,339 @@
+{% extends "base.html" %}{% load i18n %}
+{% block content %}
+
+<style>
+.task-content{
+	height: 300px !important;
+}
+.task-input{
+	height: 150px !important;
+}
+form{
+	padding-top: 50px;
+	padding-bottom: 100px;
+	background: white;
+}
+.info{
+	font-size: 0.8em;
+	color: #999;
+}
+.drop {
+  border: 2px dashed #0087F7;
+  background: white;
+  padding: 30px 20px;
+  cursor: pointer;
+  text-align: center;
+  font-size: 24px;
+}
+</style>
+<script>
+
+	function getCookie(name) {
+	    var cookieValue = null;
+	    if (document.cookie && document.cookie != '') {
+	        var cookies = document.cookie.split(';');
+	        for (var i = 0; i < cookies.length; i++) {
+	            var cookie = jQuery.trim(cookies[i]);
+	            // Does this cookie string begin with the name we want?
+	            if (cookie.substring(0, name.length + 1) == (name + '=')) {
+	                cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+	                break;
+	            }
+	        }
+	    }
+	    return cookieValue;
+	}
+
+	var problem_ready = function(){
+		if($('#pid').val() && $('#secret').val()){
+			return true;
+		}
+		return false;
+	}
+	
+	var problem_init = function(){
+		var csrftoken = getCookie('csrftoken');
+		$.ajax({
+			url: '/builder/new',
+			method: 'POST',
+			dataType: 'json',
+			data: {csrfmiddlewaretoken: csrftoken, },
+			success: function(data){
+				$('#pid').val(data['pid']);
+				$('#secret').val(data['secret']);
+				history.pushState('data', '', '/builder/' + data['pid'] + '?secret=' + data['secret']);
+			},
+			error: function(data){
+				
+			}
+		})
+	}
+
+	$(function(){
+		$('.pop').webuiPopover({title:'Title', content:function(){
+			var id = $(this).attr('data-name');
+			return $('#' + id + '-content').html();
+		}, placement: 'right-bottom'});
+		/*
+		$(document).pjax('a', '#pjax-container');
+		$(document).on('pjax:send', function() {
+		  $('#loading').show()
+		});
+		$(document).on('pjax:complete', function() {
+		  $('#loading').hide()
+		});
+		$(document).on('pjax:timeout', function(event) {
+			  // Prevent default timeout redirection behavior
+			  event.preventDefault()
+			});
+		*/
+		
+		CKEDITOR.replace( 'content-editor' );
+		
+		$('input[name=name]').focus();
+		
+		$("div#uploadFile").dropzone({	url: "/builder/upload", 
+										maxFilesize: 2,  
+										sending: function(i, xhr, data){
+											data.append('csrfmiddlewaretoken', getCookie('csrftoken'));
+											data.append('pid', $('#pid').val());
+											data.append('secret', $('#secret').val());
+										},
+										success: function(data){
+											console.log(data);
+											this.removeAllFiles();
+										}
+		});
+		
+		if(!problem_ready()){
+			problem_init();
+		}
+		
+		//history.pushState('data', '', '/path');
+	});
+</script>
+
+
+<div class="row" style="  background: url(http://www.scarky.com/styles/i/page-top.png) no-repeat; height: 132px; ">
+	<div class="col-md-12">
+		<h1 class="text-center brand"><strong>Scarky2</strong></h1>
+		<p class="text-center">Here you can build your own programming challenge!</p>
+		<br/>
+	</div>
+</div>
+<form class="form-horizontal" method="post">
+	
+	<input type="hidden" name="pid" id="pid" value="{{problem.code}}"/>
+	<input type="hidden" name="secret" id="secret" value="{{problem.secret}}"/>
+	
+	<noscript>
+		<div class="alert alert-danger">
+			Please enable JavaScript!
+		</div>
+	</noscript>
+	
+	<div class="form-group">
+		<div class="col-md-9">
+			<label>Title</label>
+			<p class="info">Title will be displayed in Scarky statistics and in the widget on you site.</p>
+			<input name="name" type="text" class="form-control" data-name="name" value="{{ problem.name }}"/>
+		</div>
+		<div class="col-md-3_ hidden" id="name-content"></div>
+	</div>
+	<div class="form-group">
+		<div class="col-md-9">
+			<label>Challenge text</label>
+			<textarea name="content" class="form-control task-content pop" data-name="content" id="content-editor">{{ problem.content }}</textarea>
+		</div>
+		<div class="col-md-3" id="content-content">
+			<br/>
+			<p>Content describes the users' task. You should specify here I/O format and place here some sample I/O data.</p>
+			<button type="submit">Preview</button>
+		</div>
+	</div>
+	<div class="form-group">
+		<div class="col-md-9">
+			<div id="uploadFile" class="drop">Drop files here or click to upload.</div>
+		</div>
+		<div class="col-md-2 text-right"></div>
+	</div>
+	
+	<div class="form-group">
+		<div class="col-md-12"><hr/></div>
+	</div>
+	
+	<div class="form-group">
+		<div class="col-md-9">
+			<label>Input</label>
+			<p class="info">Type here or upload a file for input test data. This data will be given to the standard input stream of tested programs (solutions to your challenge). <u>Notice: EOF should be \n rather than \r\n because some languages might not handle the latter</u></p>
+			<textarea class="form-control task-input " data-name="input"></textarea>
+		</div>
+		<div class="col-md-3" id="input-content"> (tip: use Notepad++ instead of Notepad under Windows).
+		
+			<div id="uploadInput" class="drop">Drop files here or click to upload.</div>
+		</div>
+	</div>
+	<!-- 
+	<div class="form-group">
+		<div class="col-md-7 col-md-offset-2">
+			<button type="submit">Upload</button>
+			<br/><br/>
+		</div>
+	</div>
+	 -->
+	
+	<div class="form-group">
+		<div class="col-md-9">
+			<label>Output</label>
+			<p class="info">Type here or upload a file for benchmark output data. This data will be used for comparison with output of the tested programs (solutions to your challenge).</p>
+			<textarea class="form-control task-input " data-name="output"></textarea>
+		</div>
+		<div class="col-md-3 " id="output-content">  Notice: EOF should be \n rather than \r\n because some languages might not handle the latter (tip: use Notepad++ instead of Notepad under Windows).
+			
+			<div id="uploadOutput" class="drop">Drop files here or click to upload.</div>
+		</div>
+	</div>
+	<!--
+	<div class="form-group">
+		<div class="col-md-7 col-md-offset-2">
+			<button type="submit">Upload</button>
+			<br/><br/>
+		</div>
+	</div>
+	-->
+	
+	<div class="form-group">
+		<div class="col-md-9">
+			<label>Rank type</label><br/>
+			<p class="info">Ranking type determines how the standings of users' solutions will be calculated and displayed in 
+			the Hall of Fame (each challenge has its own ranking called Hall of Fame). The ranking types are: <a href="#" data-toggle="modal" data-target="#ranksModal">Read more</a></p>
+			<label><input type="radio" name="rank"/> by date</label>
+			<label><input type="radio" name="rank"/> by execution time</label>
+			<label><input type="radio" name="rank"/> by solution length</label>
+		
+			<br/>
+				
+		</div>
+		<div class="col-md-3">
+		
+		<!-- Modal -->
+		<div class="modal fade" id="ranksModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+		  <div class="modal-dialog">
+		    <div class="modal-content">
+		      <div class="modal-header">
+		        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+		        <h4 class="modal-title" id="myModalLabel">Ranking</h4>
+		      </div>
+		      <div class="modal-body">
+				<p>Standard binary, sort by date - the result can be accepted or not; solutions are sorted by the date of the submission (first submissions are considered to be better)</p>
+				<p>Standard binary, sort by time - the result can be accepted or not again; solutions are sorted by the time of the execution (programs running faster are considered to be better)</p>
+				<p>Standard binary, sort by memory - just like before the result can be accepted or not; solutions are sorted by the usage of the memory (programs that use less memory are considered to be better)</p>
+				<p>Minimum source length - the result is the length of the source code, in bytes (programs with smaller source code are considered to be better)</p>
+		      </div>
+		    </div>
+		  </div>
+		</div>
+		
+		</div>
+	</div>
+	
+	<div class="form-group">
+		<div class="col-md-12">
+			<label>Languages</label>
+			<p class="info">Choose in which programming languages users are allowed to submit their solutions.</p>
+			<div class="row">
+				{% for language in languages %}
+				<div class="col-md-2"><label><input type="hidden" name="language[{{ language.id }}]" value="0"/><input type="checkbox" name="language[{{ language.id }}]" value="1"/> {{ language.label }}</label></div>
+				{% endfor %}
+				
+				<div class="col-md-12">
+					<br/>
+					<a href="#">Select all</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="form-group">
+		<div class="col-md-12"><hr/></div>
+	</div>
+	
+	<div class="form-group">
+		<div class="col-md-2 text-right"><label>Duration</label></div>
+		<div class="col-md-7 pop" data-name="duration">
+			<div class="row">
+				<div class="col-md-6">
+					<label><input type="checkbox"/> Starts right away</label><br/>
+					Start date: <input type="text">
+				</div>
+				<div class="col-md-6">
+					<label><input type="checkbox"/> Lasts forever</label><br/>
+					End date: <input type="text">
+				</div>
+			</div>
+		</div>
+		<div class="col-md-3 hidden" id="duration-content">
+		Duration specifies from when and until when your challenge will be available for other users. Before the start date and after the end date sending solutions to your challenge won't be possible. 
+		Check the starts right away to activate the challenge immediately after it's creation. Check the lasts forever option if you want the challenge to never end.
+		</div>
+	</div>
+	<div class="form-group">
+		<div class="col-md-2 text-right"><label>Challenge site</label></div>
+		<div class="col-md-7">
+			<input type="text" class="form-control pop" data-name="site"/>
+		</div>
+		<div class="col-md-3 hidden" id="site-content">
+		Challenge site specifies address of the site on which the challenge will be put. For example:
+http://john.blog.com/2009/07/my-challenge
+http://www.johns-site.com/some
+http://www.some-blogs.org/john/?p=123#here
+
+This address will be placed in Scarky statistics so that all Scarky visitors will have opportunity to find your challenge on Scarky and then solve it on you site.
+		</div>
+	</div>
+	<div class="form-group">
+		<div class="col-md-2 text-right"><label>Home page</label></div>
+		<div class="col-md-7">
+			<input type="text" class="form-control pop" data-name="home"/>
+		</div>
+		<div class="col-md-3 hidden" id="home-content">
+		Home page is simply address of your site. It will identify you as the challenge author. In Scarky statistics all challenges you create will be grouped by this address. Remember then: each time you create a challenge, provide the same home page address.
+
+Here are examples of home page addresses (corresponding to those from the previous tooltip about challenge site):
+http://john.blog.com
+http://www.johns-site.com
+http://www.some-blogs.org/john
+		</div>
+	</div>
+	<div class="form-group">
+		<div class="col-md-2 text-right"><label>Resource</label></div>
+		<div class="col-md-7">
+			<input type="text" class="form-control pop" data-name="resource"/>
+		</div>
+		<div class="col-md-3 hidden" id="resource-content">
+		Resource describes the origin of the challenge. It can be address of a site or an online judge, your name or simply some peace of text. 
+
+If your challenge is based on a problem from an online judge, choose its name from the drop down list. If you choose My own challenge option then your home page address will be treated as the resource. Choose Other to specify custom resource.
+		</div>
+	</div>
+	<div class="form-group">
+		<div class="col-md-2 text-right"><label>Send me links</label></div>
+		<div class="col-md-7">
+			<input type="text" class="form-control pop" data-name="email"/>
+		</div>
+		<div class="col-md-3 hidden" id="email-content">
+		When you finish creating the challenge, Scarky builder will generate link and html code for you. The link is required to modify or delete the challenge and html code is needed to use the challenge on your site. Enter here your email if you want to receive the link and html code of your challenge.
+		</div>
+	</div>
+	
+	<div class="form-group">
+		<div class="col-md-12"><hr/></div>
+	</div>
+	<div class="form-group">
+		<div class="col-md-12 text-center">
+			{% csrf_token %}
+			<button type="submit" class="btn btn-lg btn-primary">Save challenge</button>
+		</div>
+	</div>
+</form>
+
+{% endblock %}
