@@ -59,3 +59,5 @@ static_bower
 static/*
 uploaded/*
 IDEA
+
+db.sqlite3
