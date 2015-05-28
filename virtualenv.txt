@@ -1,0 +1,1 @@
+mkvirtualenv scarky2

@@ -1,0 +1,19 @@
+{% extends "base.html" %}{% load i18n %}
+{% block content %}
+
+<h1 class="text-center">{{ problem.name }}</h1>
+<p class="text-center">Viewing challenge directly on Scarky</p>
+
+<center>
+	<script src="http://{{ host }}/widget/{{ problem.code }}.js"></script>
+</center>
+
+<a href="{% url 'builder' problem.code %}?secret={{ problem.secret }}">Edit problem</a><br/>
+<a href="">un/Publish</a>
+<a href="">Export</a>
+<a href="">Clone</a>
+
+Submissions: 
+Users: 
+
+{% endblock %}

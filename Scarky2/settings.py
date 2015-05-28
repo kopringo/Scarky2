@@ -14,13 +14,13 @@ https://docs.djangoproject.com/en/1.8/ref/settings/
 import os
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-
+PROJECT_DIR = os.path.join(os.path.dirname( __file__ ), '..')
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.8/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '4m25(220##zv#xlr8c413lrdwrazdpgu^lpdu4lxi8976hyx%w'
+SECRET_KEY = 'xg-n#fl^m#mb0+b&yuu)yy%t)&1-om6cp3-uff%bcx8s0&w*zy'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -37,6 +37,9 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'djangobower',
+    'builder',
+    'account',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -55,7 +58,9 @@ ROOT_URLCONF = 'Scarky2.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [
+                 os.path.join(PROJECT_DIR, 'templates'),
+                 ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -70,6 +75,11 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'Scarky2.wsgi.application'
 
+STATICFILES_FINDERS = (
+    "django.contrib.staticfiles.finders.FileSystemFinder",
+    "django.contrib.staticfiles.finders.AppDirectoriesFinder",
+    'djangobower.finders.BowerFinder',
+ )
 
 # Database
 # https://docs.djangoproject.com/en/1.8/ref/settings/#databases
@@ -100,3 +110,25 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.8/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(PROJECT_DIR, 'static')
+
+BOWER_COMPONENTS_ROOT = os.path.join(PROJECT_DIR, 'static_bower')
+BOWER_INSTALLED_APPS = (
+    'jquery#2.*',
+    'bootstrap',
+    'font-awesome',
+    'webui-popover',
+    'ace',
+    'ckeditor#4.4.7',
+    'dropzone',
+)
+
+RECAPTCHA_PUBLIC = '6Lfi_gUTAAAAAA1rLKNgdcQiVrqgU1rgVdwihdKh'
+RECAPTCHA_SECRET = '6Lfi_gUTAAAAAGJHd2DfU7LDcUSXJpp6CcMIaj2O'
+
+SPHERE_ENGINE_TOKEN = ''
+
+try:
+    from settings_local import *
+except:
+    pass

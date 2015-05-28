@@ -1,0 +1,53 @@
+{% extends "base.html" %}{% load i18n %}
+
+{% block banner %}
+<hr/>
+{% endblock %}
+
+{% block content_header %}{% trans 'Sign in' %}{% endblock %}
+{% block content_footer %}{% endblock %}
+{% block content %}
+
+<style>
+.errorlist{
+	list-style: none;
+	margin: 0px;
+	padding: 0px;
+	color: #a94442;
+}
+</style>
+
+<div class="row">
+	<div class="col-md-4 col-md-offset-4">
+		<div class="row">
+			<h1 class="text-center"><strong>{% trans "Sign in" %}</strong></h1>
+		
+			<form method="post" action="{% url "django.contrib.auth.views.login" %}" class="data" id="form-login">
+			
+				<div class="form-group {% if form.username.errors %}has-error{%endif%}">
+						<label class="control-label">{{form.username.label}}</label>
+						<input id="id_username" maxlength="254" name="username" type="text" value="{% if form.username.value %}{{form.username.value}}{% endif %}" class="form-control">
+						{{form.username.errors }}
+					</div>
+					<div class="form-group {% if form.password.errors %}has-error{%endif%}">
+						<label class="control-label">{{form.password.label}}</label>
+						<input id="id_password" maxlength="254" name="password" type="password" class="form-control">
+						{{form.password.errors }}
+					</div>
+			
+				{% if form.errors %}
+					<p>Login failed!</p>
+				{% endif %}
+			
+			{% csrf_token %}
+			<input type="hidden" name="next" value="{{ next }}" />
+			<div class="form-buttons text-center">
+				<button class="btn btn-primary" type="submit"><span>{% trans "sign in" %}</span><span></span></button>
+			</div>
+			</form>
+		</div>
+	</div>
+</div>
+
+
+{% endblock %}

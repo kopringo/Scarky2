@@ -5,6 +5,10 @@ urlpatterns = [
     # Examples:
     # url(r'^$', 'Scarky2.views.home', name='home'),
     # url(r'^blog/', include('blog.urls')),
+    
 
     url(r'^admin/', include(admin.site.urls)),
+    
+    url(r'^', include('account.urls')),
+    url(r'^', include('builder.urls')),
 ]

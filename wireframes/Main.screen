@@ -1,158 +1,186 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <model:Screen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:model="http://wireframesketcher.com/1.0/model.ecore">
-  <widgets xsi:type="model:Browser" id="1" x="8" y="40" width="969" height="1441" text="Browser&#xA;http://scakry.com" measuredWidth="969" measuredHeight="1441"/>
-  <widgets xsi:type="model:Label" id="2" x="175" y="191" text="Title" measuredWidth="38" measuredHeight="30">
+  <widgets xsi:type="model:Browser" id="1" x="8" y="-40" width="969" height="1521" text="Browser&#xA;http://scakry.com/?build=randomhash" measuredWidth="969" measuredHeight="1521"/>
+  <widgets xsi:type="model:Label" id="2" x="115" y="208" text="Title" measuredWidth="37" measuredHeight="27">
     <font size="16px"/>
   </widgets>
-  <widgets xsi:type="model:TextField" id="3" x="225" y="191" width="544" measuredWidth="544" measuredHeight="30">
+  <widgets xsi:type="model:TextField" id="3" x="161" y="208" width="608" measuredWidth="608" measuredHeight="27">
     <font size="16px"/>
   </widgets>
-  <widgets xsi:type="model:Text" id="4" x="776" y="191" width="201" height="50" text="Title will be displayed in Scarky statistics and in the widget on you site." measuredWidth="201" measuredHeight="50">
-    <font/>
-  </widgets>
-  <widgets xsi:type="model:Label" id="5" x="151" y="244" text="Content" measuredWidth="63" measuredHeight="30">
+  <widgets xsi:type="model:Label" id="5" x="86" y="242" text="Content" measuredWidth="66" measuredHeight="27">
     <font size="16px"/>
   </widgets>
-  <widgets xsi:type="model:TextArea" id="6" x="225" y="248" width="544" height="113" measuredWidth="544" measuredHeight="113">
+  <widgets xsi:type="model:TextArea" id="6" x="161" y="248" width="608" height="233" measuredWidth="608" measuredHeight="233">
     <font/>
   </widgets>
   <widgets xsi:type="model:Text" id="7" x="776" y="250" width="187" height="79" text="Content describes the users' task. In programming category you should specify here I/O format and place here some sample I/O data." measuredWidth="187" measuredHeight="79">
     <font/>
   </widgets>
-  <widgets xsi:type="model:Label" id="8" x="95" y="912" text="Challenge site" measuredWidth="81" measuredHeight="25">
+  <widgets xsi:type="model:Label" id="8" x="56" y="1263" text="Challenge site" measuredWidth="86" measuredHeight="23">
     <font/>
   </widgets>
-  <widgets xsi:type="model:TextField" id="9" x="183" y="912" text="Text field" measuredWidth="60" measuredHeight="25">
+  <widgets xsi:type="model:TextField" id="9" x="161" y="1263" width="608" text="Text field" measuredWidth="608" measuredHeight="23">
     <font/>
   </widgets>
-  <widgets xsi:type="model:Label" id="10" x="95" y="941" text="Home page" measuredWidth="67" measuredHeight="25">
+  <widgets xsi:type="model:Label" id="10" x="64" y="1298" text="Home page" measuredWidth="69" measuredHeight="23">
     <font/>
   </widgets>
-  <widgets xsi:type="model:TextField" id="11" x="180" y="941" text="Text field" measuredWidth="60" measuredHeight="25">
+  <widgets xsi:type="model:TextField" id="11" x="161" y="1298" width="608" text="Text field" measuredWidth="608" measuredHeight="23">
     <font/>
   </widgets>
-  <widgets xsi:type="model:Checkbox" id="12" x="95" y="965" text="Use different site" measuredWidth="112" measuredHeight="25">
+  <widgets xsi:type="model:Text" id="13" x="776" y="1263" width="201" height="58" text="Challenge site specifies address of the site on which the challenge will be put. For example:&#xA;http://john.blog.com/2009/07/my-challenge&#xA;http://www.johns-site.com/some&#xA;http://www.some-blogs.org/john/?p=123#here&#xA;&#xA;This address will be placed in Scarky statistics so that all Scarky visitors will have opportunity to find your challenge on Scarky and then solve it on you site." measuredWidth="201" measuredHeight="58">
     <font/>
   </widgets>
-  <widgets xsi:type="model:Text" id="13" x="254" y="912" width="400" height="30" text="Challenge site specifies address of the site on which the challenge will be put. For example:&#xA;http://john.blog.com/2009/07/my-challenge&#xA;http://www.johns-site.com/some&#xA;http://www.some-blogs.org/john/?p=123#here&#xA;&#xA;This address will be placed in Scarky statistics so that all Scarky visitors will have opportunity to find your challenge on Scarky and then solve it on you site." measuredWidth="400" measuredHeight="30">
+  <widgets xsi:type="model:Text" id="14" x="992" y="1285" width="400" height="32" text="Home page is simply address of your site. It will identify you as the challenge author. In Scarky statistics all challenges you create will be grouped by this address. Remember then: each time you create a challenge, provide the same home page address.&#xA;&#xA;Here are examples of home page addresses (corresponding to those from the previous tooltip about challenge site):&#xA;http://john.blog.com&#xA;http://www.johns-site.com&#xA;http://www.some-blogs.org/john" measuredWidth="400" measuredHeight="32">
     <font/>
   </widgets>
-  <widgets xsi:type="model:Text" id="14" x="243" y="952" width="400" height="32" text="Home page is simply address of your site. It will identify you as the challenge author. In Scarky statistics all challenges you create will be grouped by this address. Remember then: each time you create a challenge, provide the same home page address.&#xA;&#xA;Here are examples of home page addresses (corresponding to those from the previous tooltip about challenge site):&#xA;http://john.blog.com&#xA;http://www.johns-site.com&#xA;http://www.some-blogs.org/john" measuredWidth="400" measuredHeight="32">
+  <widgets xsi:type="model:Label" id="15" x="78" y="960" text="Languages" measuredWidth="65" measuredHeight="23">
     <font/>
   </widgets>
-  <widgets xsi:type="model:Label" id="15" x="138" y="760" text="Languages" measuredWidth="63" measuredHeight="25">
+  <widgets xsi:type="model:Text" id="16" x="776" y="968" width="192" height="41" text="Choose in which programming languages users are allowed to submit their solutions." measuredWidth="192" measuredHeight="41">
     <font/>
   </widgets>
-  <widgets xsi:type="model:Text" id="16" x="776" y="738" width="192" height="41" text="Choose in which programming languages users are allowed to submit their solutions." measuredWidth="192" measuredHeight="41">
+  <widgets xsi:type="model:Link" id="18" x="163" y="960" text="Select All" measuredWidth="55" measuredHeight="23">
     <font/>
   </widgets>
-  <widgets xsi:type="model:Link" id="18" x="225" y="760" text="Select All" measuredWidth="51" measuredHeight="25">
+  <widgets xsi:type="model:Link" id="19" x="223" y="960" text="Deselect All" measuredWidth="71" measuredHeight="23">
     <font/>
   </widgets>
-  <widgets xsi:type="model:Link" id="19" x="285" y="760" text="Deselect All" measuredWidth="65" measuredHeight="25">
+  <widgets xsi:type="model:Link" id="20" x="296" y="960" text="Invert All" measuredWidth="52" measuredHeight="23">
     <font/>
   </widgets>
-  <widgets xsi:type="model:Link" id="20" x="358" y="760" text="Invert All" measuredWidth="49" measuredHeight="25">
+  <widgets xsi:type="model:Label" id="21" x="115" y="584" text="Input" measuredWidth="36" measuredHeight="23">
     <font/>
   </widgets>
-  <widgets xsi:type="model:Label" id="21" x="183" y="388" text="Input" measuredWidth="34" measuredHeight="25">
+  <widgets xsi:type="model:Label" id="22" x="95" y="749" text="Output" measuredWidth="48" measuredHeight="23">
     <font/>
   </widgets>
-  <widgets xsi:type="model:Label" id="22" x="171" y="559" text="Output" measuredWidth="46" measuredHeight="25">
+  <widgets xsi:type="model:TextArea" id="23" x="163" y="584" width="606" height="113" text="A *paragraph* of text&#xA;A _second_ row of text" measuredWidth="606" measuredHeight="113">
     <font/>
   </widgets>
-  <widgets xsi:type="model:TextArea" id="23" x="225" y="388" width="544" height="113" text="A *paragraph* of text&#xA;A _second_ row of text" measuredWidth="544" measuredHeight="113">
+  <widgets xsi:type="model:TextArea" id="24" x="163" y="755" width="606" height="113" text="A *paragraph* of text&#xA;A _second_ row of text" measuredWidth="606" measuredHeight="113">
     <font/>
   </widgets>
-  <widgets xsi:type="model:TextArea" id="24" x="225" y="559" width="544" height="113" text="A *paragraph* of text&#xA;A _second_ row of text" measuredWidth="544" measuredHeight="113">
+  <widgets xsi:type="model:Text" id="25" x="776" y="584" width="232" height="153" text="Type here or upload a file for input test data. This data will be given to the standard input stream of tested programs (solutions to your challenge). &#xA;&#xA;Notice: EOF should be \n rather than \r\n because some languages might not handle the latter (tip: use Notepad++ instead of Notepad under Windows)." measuredWidth="232" measuredHeight="153">
     <font/>
   </widgets>
-  <widgets xsi:type="model:Text" id="25" x="776" y="388" width="232" height="153" text="Type here or upload a file for input test data. This data will be given to the standard input stream of tested programs (solutions to your challenge). &#xA;&#xA;Notice: EOF should be \n rather than \r\n because some languages might not handle the latter (tip: use Notepad++ instead of Notepad under Windows)." measuredWidth="232" measuredHeight="153">
+  <widgets xsi:type="model:Text" id="26" x="776" y="755" width="201" height="120" text="Type here or upload a file for benchmark output data. This data will be used for comparison with output of the tested programs (solutions to your challenge). &#xA;&#xA;Notice: EOF should be \n rather than \r\n because some languages might not handle the latter (tip: use Notepad++ instead of Notepad under Windows)." measuredWidth="201" measuredHeight="120">
     <font/>
   </widgets>
-  <widgets xsi:type="model:Text" id="26" x="776" y="559" width="201" height="120" text="Type here or upload a file for benchmark output data. This data will be used for comparison with output of the tested programs (solutions to your challenge). &#xA;&#xA;Notice: EOF should be \n rather than \r\n because some languages might not handle the latter (tip: use Notepad++ instead of Notepad under Windows)." measuredWidth="201" measuredHeight="120">
+  <widgets xsi:type="model:Label" id="27" x="86" y="920" text="Rank type" measuredWidth="61" measuredHeight="23">
     <font/>
   </widgets>
-  <widgets xsi:type="model:Label" id="27" x="161" y="678" text="Rank type" measuredWidth="58" measuredHeight="25">
+  <widgets xsi:type="model:Label" id="29" x="86" y="1144" text="Duration" measuredWidth="56" measuredHeight="23">
     <font/>
   </widgets>
-  <widgets xsi:type="model:Label" id="29" x="183" y="1000" text="Duration" measuredWidth="53" measuredHeight="25">
+  <widgets xsi:type="model:Checkbox" id="30" x="179" y="1144" text="Starts right away" measuredWidth="116" measuredHeight="23">
     <font/>
   </widgets>
-  <widgets xsi:type="model:Checkbox" id="30" x="399" y="984" text="Starts right away" measuredWidth="114" measuredHeight="25">
+  <widgets xsi:type="model:Checkbox" id="31" x="314" y="1144" text="Lasts forever" measuredWidth="95" measuredHeight="23">
     <font/>
   </widgets>
-  <widgets xsi:type="model:Checkbox" id="31" x="595" y="990" text="Lasts forever" measuredWidth="90" measuredHeight="25">
+  <widgets xsi:type="model:Text" id="32" x="553" y="1144" width="400" height="120" text="Duration specifies from when and until when your challenge will be available for other users. Before the start date and after the end date sending solutions to your challenge won't be possible. &#xA;&#xA;Check the starts right away to activate the challenge immediately after it's creation. Check the lasts forever option if you want the challenge to never end." measuredWidth="400" measuredHeight="120">
     <font/>
   </widgets>
-  <widgets xsi:type="model:Text" id="32" x="739" y="995" width="400" height="120" text="Duration specifies from when and until when your challenge will be available for other users. Before the start date and after the end date sending solutions to your challenge won't be possible. &#xA;&#xA;Check the starts right away to activate the challenge immediately after it's creation. Check the lasts forever option if you want the challenge to never end." measuredWidth="400" measuredHeight="120">
+  <widgets xsi:type="model:Label" id="34" x="78" y="1324" text="Resource" measuredWidth="60" measuredHeight="23">
     <font/>
   </widgets>
-  <widgets xsi:type="model:Checkbox" id="33" x="200" y="1026" text="Don't show in statistics" measuredWidth="148" measuredHeight="25">
+  <widgets xsi:type="model:TextField" id="35" x="161" y="1332" width="608" text="Text field" measuredWidth="608" measuredHeight="23">
     <font/>
   </widgets>
-  <widgets xsi:type="model:Label" id="34" x="195" y="1087" text="Resource" measuredWidth="54" measuredHeight="25">
+  <widgets xsi:type="model:Label" id="36" x="51" y="1376" text="Send me links" measuredWidth="82" measuredHeight="23">
     <font/>
   </widgets>
-  <widgets xsi:type="model:TextField" id="35" x="398" y="1088" text="Text field" measuredWidth="60" measuredHeight="25">
+  <widgets xsi:type="model:TextField" id="37" x="161" y="1376" width="608" text="Text field" measuredWidth="608" measuredHeight="23">
     <font/>
   </widgets>
-  <widgets xsi:type="model:Label" id="36" x="208" y="1139" text="Send me links" measuredWidth="78" measuredHeight="25">
+  <widgets xsi:type="model:Text" id="38" x="776" y="1456" width="400" height="120" text="When you finish creating the challenge, Scarky builder will generate link and html code for you. The link is required to modify or delete the challenge and html code is needed to use the challenge on your site. Enter here your email if you want to receive the link and html code of your challenge." measuredWidth="400" measuredHeight="120">
     <font/>
   </widgets>
-  <widgets xsi:type="model:TextField" id="37" x="402" y="1148" text="Text field" measuredWidth="60" measuredHeight="25">
+  <widgets xsi:type="model:Text" id="39" x="776" y="1332" width="400" height="120" text="Resource describes the origin of the challenge. It can be address of a site or an online judge, your name or simply some peace of text. &#xA;&#xA;If your challenge is based on a problem from an online judge, choose its name from the drop down list. If you choose My own challenge option then your home page address will be treated as the resource. Choose Other to specify custom resource." measuredWidth="400" measuredHeight="120">
     <font/>
   </widgets>
-  <widgets xsi:type="model:Text" id="38" x="744" y="1159" width="400" height="120" text="When you finish creating the challenge, Scarky builder will generate link and html code for you. The link is required to modify or delete the challenge and html code is needed to use the challenge on your site. Enter here your email if you want to receive the link and html code of your challenge." measuredWidth="400" measuredHeight="120">
+  <widgets xsi:type="model:HLine" id="41" x="161" y="268" width="608" measuredWidth="608" measuredHeight="6"/>
+  <widgets xsi:type="model:Button" id="42" x="163" y="704" text="Upload file" measuredWidth="79" measuredHeight="25">
     <font/>
   </widgets>
-  <widgets xsi:type="model:Text" id="39" x="664" y="1113" width="400" height="120" text="Resource describes the origin of the challenge. It can be address of a site or an online judge, your name or simply some peace of text. &#xA;&#xA;If your challenge is based on a problem from an online judge, choose its name from the drop down list. If you choose My own challenge option then your home page address will be treated as the resource. Choose Other to specify custom resource." measuredWidth="400" measuredHeight="120">
+  <widgets xsi:type="model:List" id="44" x="163" y="992" height="77" text="[x] selected&#xA;[ ] not selected&#xA;~[ ] disabled~&#xA;~[x] disabled and selected~" measuredWidth="152" measuredHeight="77" border="false" alpha="0">
+    <font/>
+    <items x="0" y="2" width="152" height="22" text="[x] selected"/>
+    <items x="0" y="24" width="152" height="22" text="[ ] not selected"/>
+    <items x="0" y="46" width="152" height="22" text="~[ ] disabled~"/>
+    <items x="0" y="68" width="152" height="22" text="~[x] disabled and selected~"/>
+  </widgets>
+  <widgets xsi:type="model:List" id="45" x="320" y="992" height="77" text="[x] selected&#xA;[ ] not selected&#xA;~[ ] disabled~&#xA;~[x] disabled and selected~" measuredWidth="152" measuredHeight="77" border="false" alpha="0">
+    <font/>
+    <items x="0" y="2" width="152" height="22" text="[x] selected"/>
+    <items x="0" y="24" width="152" height="22" text="[ ] not selected"/>
+    <items x="0" y="46" width="152" height="22" text="~[ ] disabled~"/>
+    <items x="0" y="68" width="152" height="22" text="~[x] disabled and selected~"/>
+  </widgets>
+  <widgets xsi:type="model:List" id="46" x="448" y="992" height="77" text="[x] selected&#xA;[ ] not selected&#xA;~[ ] disabled~&#xA;~[x] disabled and selected~" measuredWidth="152" measuredHeight="77" border="false" alpha="0">
+    <font/>
+    <items x="0" y="2" width="152" height="22" text="[x] selected"/>
+    <items x="0" y="24" width="152" height="22" text="[ ] not selected"/>
+    <items x="0" y="46" width="152" height="22" text="~[ ] disabled~"/>
+    <items x="0" y="68" width="152" height="22" text="~[x] disabled and selected~"/>
+  </widgets>
+  <widgets xsi:type="model:List" id="47" x="599" y="992" height="77" text="[x] selected&#xA;[ ] not selected&#xA;~[ ] disabled~&#xA;~[x] disabled and selected~" measuredWidth="152" measuredHeight="77" border="false" alpha="0">
+    <font/>
+    <items x="0" y="2" width="152" height="22" text="[x] selected"/>
+    <items x="0" y="24" width="152" height="22" text="[ ] not selected"/>
+    <items x="0" y="46" width="152" height="22" text="~[ ] disabled~"/>
+    <items x="0" y="68" width="152" height="22" text="~[x] disabled and selected~"/>
+  </widgets>
+  <widgets xsi:type="model:HLine" id="49" x="8" y="536" width="969" measuredWidth="969" measuredHeight="6"/>
+  <widgets xsi:type="model:Tooltip" id="50" x="776" y="201" width="192" height="73" text="Title will be displayed in Scarky statistics and in the widget on you site." measuredWidth="192" measuredHeight="73" position="topLeft">
     <font/>
   </widgets>
-  <widgets xsi:type="model:Text" id="40" x="602" y="1047" width="400" height="120" text="Check this option if you don't want the challenge to appear in Scarky statistics. Besides the fact that link to the challenge won't be displayed in statistics, it will be fully functional. Use it when you are testing your challenge and when you are trying Scarky out - checking this option in such cases will keep Scarky statistics unpolluted :)" measuredWidth="400" measuredHeight="120">
+  <widgets xsi:type="model:Label" id="51" x="399" y="102" text="Scarky v2" measuredWidth="188" measuredHeight="57">
+    <font size="43px"/>
+  </widgets>
+  <widgets xsi:type="model:Label" id="52" x="343" y="158" text="Here you can build your own programming challenge!" measuredWidth="300" measuredHeight="23">
     <font/>
   </widgets>
-  <widgets xsi:type="model:HLine" id="41" x="225" y="268" width="544" measuredWidth="544" measuredHeight="6"/>
-  <widgets xsi:type="model:Button" id="42" x="225" y="512" text="Upload file" measuredWidth="76" measuredHeight="27">
+  <widgets xsi:type="model:Button" id="53" x="664" y="488" width="105" text="Preview" measuredWidth="105" measuredHeight="25">
     <font/>
   </widgets>
-  <widgets xsi:type="model:List" id="43" x="225" y="683" width="378" height="59" text="(o) option 1 (selected)&#xA;( ) option 2&#xA;~( ) option 3 (disabled)~&#xA;~(o) option 4 (disabled and selected)~" measuredWidth="378" measuredHeight="59" selection="0" border="false" alpha="0">
+  <widgets xsi:type="model:Link" id="54" x="161" y="489" text="Upload image" measuredWidth="78" measuredHeight="23">
     <font/>
-    <items x="0" y="2" width="378" height="23" text="(o) option 1 (selected)"/>
-    <items x="0" y="25" width="378" height="23" text="( ) option 2"/>
-    <items x="0" y="48" width="378" height="23" text="~( ) option 3 (disabled)~"/>
-    <items x="0" y="71" width="378" height="23" text="~(o) option 4 (disabled and selected)~"/>
   </widgets>
-  <widgets xsi:type="model:List" id="44" x="225" y="796" height="77" text="[x] selected&#xA;[ ] not selected&#xA;~[ ] disabled~&#xA;~[x] disabled and selected~" measuredWidth="144" measuredHeight="77" border="false" alpha="0">
+  <widgets xsi:type="model:Button" id="55" x="163" y="874" text="Upload file" measuredWidth="79" measuredHeight="25">
     <font/>
-    <items x="0" y="2" width="144" height="23" text="[x] selected"/>
-    <items x="0" y="25" width="144" height="23" text="[ ] not selected"/>
-    <items x="0" y="48" width="144" height="23" text="~[ ] disabled~"/>
-    <items x="0" y="71" width="144" height="23" text="~[x] disabled and selected~"/>
   </widgets>
-  <widgets xsi:type="model:List" id="45" x="384" y="800" height="77" text="[x] selected&#xA;[ ] not selected&#xA;~[ ] disabled~&#xA;~[x] disabled and selected~" measuredWidth="144" measuredHeight="77" border="false" alpha="0">
+  <widgets xsi:type="model:RadioButton" id="56" x="163" y="920" text="by date" measuredWidth="61" measuredHeight="23">
     <font/>
-    <items x="0" y="2" width="144" height="23" text="[x] selected"/>
-    <items x="0" y="25" width="144" height="23" text="[ ] not selected"/>
-    <items x="0" y="48" width="144" height="23" text="~[ ] disabled~"/>
-    <items x="0" y="71" width="144" height="23" text="~[x] disabled and selected~"/>
   </widgets>
-  <widgets xsi:type="model:List" id="46" x="488" y="808" height="77" text="[x] selected&#xA;[ ] not selected&#xA;~[ ] disabled~&#xA;~[x] disabled and selected~" measuredWidth="144" measuredHeight="77" border="false" alpha="0">
+  <widgets xsi:type="model:RadioButton" id="57" x="253" y="920" text="by execution time" measuredWidth="122" measuredHeight="23">
     <font/>
-    <items x="0" y="2" width="144" height="23" text="[x] selected"/>
-    <items x="0" y="25" width="144" height="23" text="[ ] not selected"/>
-    <items x="0" y="48" width="144" height="23" text="~[ ] disabled~"/>
-    <items x="0" y="71" width="144" height="23" text="~[x] disabled and selected~"/>
   </widgets>
-  <widgets xsi:type="model:List" id="47" x="608" y="808" height="77" text="[x] selected&#xA;[ ] not selected&#xA;~[ ] disabled~&#xA;~[x] disabled and selected~" measuredWidth="144" measuredHeight="77" border="false" alpha="0">
+  <widgets xsi:type="model:RadioButton" id="58" x="397" y="920" text="by solution length" measuredWidth="121" measuredHeight="23">
     <font/>
-    <items x="0" y="2" width="144" height="23" text="[x] selected"/>
-    <items x="0" y="25" width="144" height="23" text="[ ] not selected"/>
-    <items x="0" y="48" width="144" height="23" text="~[ ] disabled~"/>
-    <items x="0" y="71" width="144" height="23" text="~[x] disabled and selected~"/>
   </widgets>
-  <widgets xsi:type="model:HLine" id="48" x="225" y="896" width="544" measuredWidth="544" measuredHeight="6"/>
-  <widgets xsi:type="model:HLine" id="49" x="8" y="376" width="969" measuredWidth="969" measuredHeight="6"/>
+  <widgets xsi:type="model:Text" id="59" x="992" y="880" width="400" height="120" text="Ranking type determines how the standings of users' solutions will be calculated and displayed in the Hall of Fame (each challenge has its own ranking called Hall of Fame). The ranking types are:&#xA;Standard binary, sort by date - the result can be accepted or not; solutions are sorted by the date of the submission (first submissions are considered to be better)&#xA;Standard binary, sort by time - the result can be accepted or not again; solutions are sorted by the time of the execution (programs running faster are considered to be better)&#xA;Standard binary, sort by memory - just like before the result can be accepted or not; solutions are sorted by the usage of the memory (programs that use less memory are considered to be better)&#xA;Minimum source length - the result is the length of the source code, in bytes (programs with smaller source code are considered to be better)" measuredWidth="400" measuredHeight="120">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:HLine" id="60" x="8" y="1104" width="969" measuredWidth="969" measuredHeight="6"/>
+  <widgets xsi:type="model:LinkBar" id="61" x="824" y="32" text="Build, About, FAQ" measuredWidth="129" measuredHeight="23">
+    <font/>
+    <items x="0" y="0" width="31" height="23" text="Build"/>
+    <items x="49" y="0" width="37" height="23" text="About"/>
+    <items x="104" y="0" width="24" height="23" text="FAQ"/>
+  </widgets>
+  <widgets xsi:type="model:Label" id="62" x="179" y="1178" text="Start date" measuredWidth="64" measuredHeight="23">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:DateField" id="63" x="256" y="1178" width="137" text="  /  /  " measuredWidth="137" measuredHeight="23"/>
+  <widgets xsi:type="model:Label" id="64" x="179" y="1208" text="End date" measuredWidth="56" measuredHeight="23">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:DateField" id="65" x="256" y="1208" width="137" text="  /  /  " measuredWidth="137" measuredHeight="23"/>
+  <widgets xsi:type="model:Button" id="66" x="392" y="1433" text="Save challenge" measuredWidth="183" measuredHeight="38">
+    <font size="24px"/>
+  </widgets>
   <hRuler/>
   <vRuler/>
   <font size="12px"/>
