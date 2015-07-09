@@ -8,6 +8,21 @@
 	<script src="http://{{ host }}/widget/{{ problem.code }}.js"></script>
 </center>
 
+<h3>JavaScript widget</h3>
+<code>
+&lt;script src="http://{{ host }}/widget/{{ problem.code }}.js"&gt;&lt;/script&gt;
+</code>
+<br/><br/>
+
+<h3>Use through API</h3>
+<code>
+POST https://{{ host }}/api/1/{{ problem.code }}/submissions<br/>
+GET https://{{ host }}/api/1/{{ problem.code }}/submissions/:id<br/>
+GET https://{{ host }}/api/1/{{ problem.code }}<br/>
+</code>
+<br/><br/>
+
+
 <a href="{% url 'builder' problem.code %}?secret={{ problem.secret }}">Edit problem</a><br/>
 <a href="">un/Publish</a>
 <a href="">Export</a>

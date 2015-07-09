@@ -39,7 +39,7 @@ def builder(request, pid):
         
     else:
         
-        secret = request.GET.get('secret', '')
+        secret = request.GET.get('secret', request.POST.get('secret', ''))
         try:
             problem = Problem.objects.get(code=pid)
             
@@ -66,7 +66,7 @@ def builder(request, pid):
             problem.output = output
             problem.save()
 
-            return HttpResponseRedirect('/')
+            return HttpResponseRedirect('/builder/%s?secret=%s' % (pid, problem.secret))
     
     languages = Language.objects.all().filter(visible=True)
     if len(languages) == 0:
@@ -127,3 +127,16 @@ def widget(request, pid):
 def problems(request):
     params = {}
     return render(request, 'builder/problems.html', params)
+
+
+def api_1_problems(request):
+    pass
+
+def api_1_problem(request, pid):
+    pass
+
+def api_1_submissions(request, pid):
+    pass
+
+def api_1_submission(request, pid, sid):
+    pass

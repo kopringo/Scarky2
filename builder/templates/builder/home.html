@@ -166,7 +166,7 @@ form{
 		<div class="col-md-9">
 			<label>Input</label>
 			<p class="info">Type here or upload a file for input test data. This data will be given to the standard input stream of tested programs (solutions to your challenge). <u>Notice: EOF should be \n rather than \r\n because some languages might not handle the latter</u></p>
-			<textarea class="form-control task-input " data-name="input"></textarea>
+			<textarea class="form-control task-input " data-name="input" name="input">{{ problem.input }}</textarea>
 		</div>
 		<div class="col-md-3" id="input-content"> (tip: use Notepad++ instead of Notepad under Windows).
 		
@@ -186,7 +186,7 @@ form{
 		<div class="col-md-9">
 			<label>Output</label>
 			<p class="info">Type here or upload a file for benchmark output data. This data will be used for comparison with output of the tested programs (solutions to your challenge).</p>
-			<textarea class="form-control task-input " data-name="output"></textarea>
+			<textarea class="form-control task-input " data-name="output" name="output">{{ problem.output }}</textarea>
 		</div>
 		<div class="col-md-3 " id="output-content">  Notice: EOF should be \n rather than \r\n because some languages might not handle the latter (tip: use Notepad++ instead of Notepad under Windows).
 			

@@ -51,10 +51,12 @@
 	<style>
 	body{
 		font-family: Ubuntu !important;
-		background: url(http://www.scarky.com/styles/i/body-top.png) repeat-x;
+		background: url("{% static 'img/body-top.png' %}") repeat-x;
 	}
 	body > .container{
 		max-width: 970px;
+		background: url("{% static 'img/body-bottom.png' %}") repeat-x 0 100%;
+		
 	}
 	.brand{
 		color: #333;
