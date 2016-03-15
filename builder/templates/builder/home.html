@@ -207,9 +207,9 @@ form{
 			<label>Rank type</label><br/>
 			<p class="info">Ranking type determines how the standings of users' solutions will be calculated and displayed in 
 			the Hall of Fame (each challenge has its own ranking called Hall of Fame). The ranking types are: <a href="#" data-toggle="modal" data-target="#ranksModal">Read more</a></p>
-			<label><input type="radio" name="rank"/> by date</label>
-			<label><input type="radio" name="rank"/> by execution time</label>
-			<label><input type="radio" name="rank"/> by solution length</label>
+			<label class="mdl-radio mdl-js-radio mdl-js-ripple-effect"><input type="radio" name="rank" class="mdl-radio__button"/> <span class="mdl-radio__label">by date</span></label>
+			<label class="mdl-radio mdl-js-radio mdl-js-ripple-effect"><input type="radio" name="rank" class="mdl-radio__button"/> <span class="mdl-radio__label">by execution time</span></label>
+			<label class="mdl-radio mdl-js-radio mdl-js-ripple-effect"><input type="radio" name="rank" class="mdl-radio__button"/> <span class="mdl-radio__label">by solution length</span></label>
 		
 			<br/>
 				
@@ -243,7 +243,7 @@ form{
 			<p class="info">Choose in which programming languages users are allowed to submit their solutions.</p>
 			<div class="row">
 				{% for language in languages %}
-				<div class="col-md-2"><label><input type="hidden" name="language[{{ language.id }}]" value="0"/><input type="checkbox" name="language[{{ language.id }}]" value="1"/> {{ language.label }}</label></div>
+				<div class="col-md-2"><label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect"><input type="hidden" name="language[{{ language.id }}]" value="0"/><input type="checkbox" name="language[{{ language.id }}]" value="1" class="mdl-checkbox__input"/> <span class="mdl-checkbox__label">{{ language.label }}</span></label></div>
 				{% endfor %}
 				
 				<div class="col-md-12">
