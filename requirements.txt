@@ -2,4 +2,4 @@ django==1.8
 django-bower
 django-debug-toolbar
 MySQL-python
--e git://github.com/sphere-engine/sphereengine-python.git@0.12#egg=sphereengine-python
+sphere-engine==0.13
