@@ -3,7 +3,7 @@
 from django.db import models, IntegrityError
 from django.contrib.auth.models import User
 
-from sphere_engine import SphereEngineClient
+#from sphere_engine import ProblemsClientV3
 from django.conf import settings
 
 from django.utils import timezone
@@ -28,7 +28,7 @@ class Language(models.Model):
     
     @staticmethod
     def sync_languages():
-        client = SphereEngineClient(settings.SPHERE_ENGINE_TOKEN)
+        #client = ProblemsClientV3(settings.SPHERE_ENGINE_TOKEN)
         languages = client.problems.languages()
         languages = json.loads(languages)
         

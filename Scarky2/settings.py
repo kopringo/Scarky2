@@ -38,8 +38,8 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'djangobower',
-    'builder',
-    'account',
+    'Scarky2.builder',
+    'Scarky2.account',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -96,13 +96,9 @@ DATABASES = {
 # https://docs.djangoproject.com/en/1.8/topics/i18n/
 
 LANGUAGE_CODE = 'en-us'
-
 TIME_ZONE = 'UTC'
-
 USE_I18N = True
-
 USE_L10N = True
-
 USE_TZ = True
 
 
@@ -110,9 +106,9 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.8/howto/static-files/
 
 STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(PROJECT_DIR, 'static')
+STATIC_ROOT = os.path.join(PROJECT_DIR, 'var', 'static')
 
-BOWER_COMPONENTS_ROOT = os.path.join(PROJECT_DIR, 'static_bower')
+BOWER_COMPONENTS_ROOT = os.path.join(PROJECT_DIR, 'var', 'static_bower')
 BOWER_INSTALLED_APPS = (
     'jquery#2.*',
     'bootstrap',

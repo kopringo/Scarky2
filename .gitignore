@@ -55,9 +55,9 @@ target/
 
 # our
 Scarky2/settings_local.py
-static_bower
-static/*
-uploaded/*
+var/static_bower
+var/static/*
+var/uploaded/*
 IDEA
 
 db.sqlite3

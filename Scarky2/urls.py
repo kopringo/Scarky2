@@ -9,6 +9,6 @@ urlpatterns = [
 
     url(r'^admin/', include(admin.site.urls)),
     
-    url(r'^', include('account.urls')),
-    url(r'^', include('builder.urls')),
+    url(r'^', include('Scarky2.account.urls')),
+    url(r'^', include('Scarky2.builder.urls')),
 ]
